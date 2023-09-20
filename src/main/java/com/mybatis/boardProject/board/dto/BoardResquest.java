@@ -1,8 +1,8 @@
-package com.mybatis.boardProject.board;
+package com.mybatis.boardProject.board.dto;
 
 import java.time.LocalDateTime;
 
-public class BoardDTO {
+public class BoardResquest {
     private final Long boardId;
     private String boardNm;
     private String boardDesc;
@@ -11,7 +11,7 @@ public class BoardDTO {
     private final LocalDateTime regDt;
     private LocalDateTime mdfDt;
 
-    public BoardDTO(Long boardId, String boardNm, String boardDesc, boolean useYn, Long authId, LocalDateTime regDt, LocalDateTime mdfDt) {
+    public BoardResquest(Long boardId, String boardNm, String boardDesc, boolean useYn, Long authId, LocalDateTime regDt, LocalDateTime mdfDt) {
         this.boardId = boardId;
         this.boardNm = boardNm;
         this.boardDesc = boardDesc;

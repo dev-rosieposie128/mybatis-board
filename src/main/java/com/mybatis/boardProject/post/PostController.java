@@ -1,6 +1,6 @@
-package com.mybatis.boardProject.web;
+package com.mybatis.boardProject.post;
 
-import com.mybatis.boardProject.post.PostDTO;
+import com.mybatis.boardProject.post.dto.PostRequest;
 import com.mybatis.boardProject.post.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ public class PostController {
     }
 
     @PostMapping("/board/{board-id}/post")
-    public void insertPost(@PathVariable("board-id") String boardId, @RequestParam PostDTO params){
+    public void insertPost(@PathVariable("board-id") String boardId, @RequestParam PostRequest params){
         postService.insertPost(params);
     }
 }

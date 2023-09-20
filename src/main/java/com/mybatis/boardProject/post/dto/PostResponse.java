@@ -1,8 +1,8 @@
-package com.mybatis.boardProject.post;
+package com.mybatis.boardProject.post.dto;
 
 import java.time.LocalDateTime;
 
-public class PostDTO {
+public class PostResponse {
     private final Long postId;
     private String title;
     private String content;
@@ -16,7 +16,7 @@ public class PostDTO {
     private LocalDateTime mdfDt;
     private final Long boardId;
 
-    public PostDTO(Long postId, String title, String content, int viewCnt, int replyCnt, long userId, long nUserId, long nPwd, boolean delYn, LocalDateTime regDt, LocalDateTime mdfDt, Long boardId) {
+    public PostResponse(Long postId, String title, String content, int viewCnt, int replyCnt, long userId, long nUserId, long nPwd, boolean delYn, LocalDateTime regDt, LocalDateTime mdfDt, Long boardId) {
         this.postId = postId;
         this.title = title;
         this.content = content;

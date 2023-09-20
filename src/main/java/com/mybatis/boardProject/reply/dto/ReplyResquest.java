@@ -1,8 +1,8 @@
-package com.mybatis.boardProject.reply;
+package com.mybatis.boardProject.reply.dto;
 
 import java.time.LocalDateTime;
 
-public class ReplyDTO {
+public class ReplyResquest {
     private final Long replyId;
     private final Long postId;
     private String content;
@@ -12,7 +12,7 @@ public class ReplyDTO {
     private final LocalDateTime regDt;
     private LocalDateTime mdfDt;
 
-    public ReplyDTO(Long replyId, Long postId, String content, Long userId, Long nUserId, Long uPwd, LocalDateTime regDt, LocalDateTime mdfDt) {
+    public ReplyResquest(Long replyId, Long postId, String content, Long userId, Long nUserId, Long uPwd, LocalDateTime regDt, LocalDateTime mdfDt) {
         this.replyId = replyId;
         this.postId = postId;
         this.content = content;

@@ -1,7 +1,9 @@
 package com.mybatis.boardProject.reply.dao;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+@Mapper
 @Repository
-public class ReplyDAOImpl implements ReplyDAO{
+public interface ReplyMapper {
 }

@@ -1,8 +1,8 @@
-package com.mybatis.boardProject.authority;
+package com.mybatis.boardProject.authority.dto;
 
 import java.time.LocalDateTime;
 
-public class AuthorityDTO {
+public class AuthorityResponse {
     private final Long authId;
     private String authNm;
     private boolean useYn;
@@ -10,7 +10,7 @@ public class AuthorityDTO {
     private final LocalDateTime regDt;
     private LocalDateTime mdfDt;
 
-    public AuthorityDTO(Long authId, String authNm, boolean useYn, int level, LocalDateTime regDt, LocalDateTime mdfDt) {
+    public AuthorityResponse(Long authId, String authNm, boolean useYn, int level, LocalDateTime regDt, LocalDateTime mdfDt) {
         this.authId = authId;
         this.authNm = authNm;
         this.useYn = useYn;
