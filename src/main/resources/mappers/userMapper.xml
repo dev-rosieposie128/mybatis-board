@@ -68,5 +68,11 @@
     </update>
 
 
-
+    <delete id="deleteUser">
+        <!-- 회원 탈퇴-->
+        update user set
+               use_yn = false
+             , mdf_dt = now()
+         where user_id= #{userId}
+    </delete>
 </mapper>

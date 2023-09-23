@@ -1,16 +1,17 @@
 package com.mybatis.boardProject.user.model;
-
+import lombok.Builder;
 import java.util.Date;
 
+@Builder
 public class User {
     private Long userId;
     private String loginId;
     private String pwd;
     private String name;
     private String email;
+    private Long authId;
     private Date regDt;
     private Date mdfDt;
-    private Long authId;
 
     public Long getUserId() {
         return userId;
@@ -71,13 +72,19 @@ public class User {
     public Long getAuthId() {
         return authId;
     }
-
     public void setAuthId(Long authId) {
+
         this.authId = authId;
     }
-    public User() {
 
+    public User(Long userId, String loginId, String pwd, String name, String email, Long authId, Date regDt, Date mdfDt) {
+        this.userId = userId;
+        this.loginId = loginId;
+        this.pwd = pwd;
+        this.name = name;
+        this.email = email;
+        this.authId = authId;
+        this.regDt = regDt;
+        this.mdfDt = mdfDt;
     }
-
-
 }

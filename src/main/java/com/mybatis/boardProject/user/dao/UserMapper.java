@@ -13,27 +13,16 @@ import java.util.List;
 @Repository
 public interface UserMapper {
 
-    /**
-     * 회원 등록
-     * @param userCreateRequest - 회원 정보
-     */
     public void insertUser(UserCreateRequest userCreateRequest);
 
     public void updateUser(User user);
 
-    /**
-     * 로그인 중복 조회
-     * @param loginId - 로그인 아이디
-     */
     public boolean duplicateCheckLoginId(String loginId);
 
-    /**
-     * 이메일 중복 조회
-     * @param email - 이메일
-     */
     public boolean duplicateCheckEmail(String email);
 
     public UserResponseDto selectUser(Long userId);
 
     public List<UserResponseDto> selectUserList();
+    public void deleteUser(Long userId);
 }
