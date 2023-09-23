@@ -35,5 +35,6 @@ public class UserCreateRequest {
     }
 
     public UserCreateRequest() {
+
     }
 }
