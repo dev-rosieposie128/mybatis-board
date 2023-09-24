@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.boardProject.user.dao.UserMapper">
+
+    <insert id="insertUser">
+        <!-- 회원 저장 -->
+        insert into user (
+               login_id
+             , auth_id
+             , pwd
+             , name
+             , email
+             , use_yn
+            <include refid="common.insert_basic_data_col" />
+            ) values (
+                      #{loginId}
+                    , 1
+                    , #{pwd}
+                    , #{name}
+                    , #{email}
+                    , true
+                    <include refid="common.insert_basic_data_val" />
+                    )
+    </insert>
+
+    <select id="duplicateCheckLoginId" parameterType="com.mybatis.boardProject.user.dto.UserCreateRequest" resultType="boolean">
+        <!-- 로그인 아이디 중복 조회 -->
+        select exists (select login_id from user where login_id = #{loginId})
+    </select>
+
+    <select id="duplicateCheckEmail" parameterType="com.mybatis.boardProject.user.dto.UserCreateRequest" resultType="boolean">
+        <!-- 이메일 중복 조회 -->
+        select exists (select email from user where email = #{email})
+    </select>
+
+    <select id="selectUserList" resultType="com.mybatis.boardProject.user.dto.UserResponseDto">
+        <!-- 회원 리스트 조회 -->
+        select user_id
+            , login_id
+            , pwd
+            , name
+            , email
+            , auth_id
+            from user
+    </select>
+
+    <select id="selectUser" parameterType="long" resultType="com.mybatis.boardProject.user.dto.UserResponseDto">
+        <!-- 회원 정보 조회 -->
+        select user_id
+             , login_id
+             , pwd
+             , name
+             , email
+             , auth_id
+          from user
+         where user_id = #{userId}
+    </select>
+
+    <update id="updateUser">
+        <!-- 회원 정보 업데이트-->
+        update user set
+               name =   #{name}
+             , pwd  =   #{pwd}
+             , email =  #{email}
+             , mdf_dt = now()
+         where user_id= #{userId}
+    </update>
+
+
+    <delete id="deleteUser">
+        <!-- 회원 탈퇴-->
+        update user set
+               use_yn = false
+             , mdf_dt = now()
+         where user_id= #{userId}
+    </delete>
+</mapper>

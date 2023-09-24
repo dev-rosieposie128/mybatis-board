@@ -1,7 +1,7 @@
 package com.mybatis.boardProject.post.service;
 
-import com.mybatis.boardProject.post.PostDTO;
-import com.mybatis.boardProject.post.dao.PostDAO;
+import com.mybatis.boardProject.post.dto.PostRequest;
+import com.mybatis.boardProject.post.dao.PostMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,36 +9,36 @@ import java.util.List;
 
 @Service
 public class PostServiceImpl implements PostService {
-    private final PostDAO postDAO;
+    private final PostMapper postMapper;
 
-    public PostServiceImpl(PostDAO postDAO) {
-        this.postDAO = postDAO;
+    public PostServiceImpl(PostMapper postMapper) {
+        this.postMapper = postMapper;
     }
     @Transactional
-    public Long insertPost(PostDTO params) {
-        postDAO.insertPost(params);
+    public Long insertPost(PostRequest params) {
+        postMapper.insertPost(params);
         return params.getPostId();
     }
 
-    public PostDTO selectPost(Long id) {
-        return postDAO.selectPost(id);
+    public PostRequest selectPost(Long id) {
+        return postMapper.selectPost(id);
     }
 
     @Transactional
-    public void updatePost(PostDTO params) {
-        postDAO.updatePost(params);
+    public void updatePost(PostRequest params) {
+        postMapper.updatePost(params);
     }
 
     @Transactional
     public void deletePost(Long id) {
-        postDAO.deletePost(id);
+        postMapper.deletePost(id);
     }
 
-    public List<PostDTO> selectPostList() {
-        return postDAO.selectPostList();
+    public List<PostRequest> selectPostList() {
+        return postMapper.selectPostList();
     }
 
     public int count() {
-        return postDAO.count();
+        return postMapper.count();
     }
 }

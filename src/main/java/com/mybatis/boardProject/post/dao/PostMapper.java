@@ -1,15 +1,20 @@
-package com.mybatis.boardProject.post.service;
+package com.mybatis.boardProject.post.dao;
 
 import com.mybatis.boardProject.post.dto.PostRequest;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface PostService {
+@Mapper
+@Repository
+public interface PostMapper {
+
     /**
      * 게시글 저장
      * @param params - 게시글 정보
      */
-    public Long insertPost(PostRequest params);
+    public void insertPost(PostRequest params);
 
     /**
      * 게시글 상세정보 조회
