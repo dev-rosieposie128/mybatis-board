@@ -1,7 +1,7 @@
-package com.mybatis.boardProject.authority;
+package com.mybatis.boardProject.board.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AuthorityController {
+public class BoardController {
 }

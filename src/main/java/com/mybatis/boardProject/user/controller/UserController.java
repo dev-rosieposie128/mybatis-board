@@ -1,4 +1,4 @@
-package com.mybatis.boardProject.user;
+package com.mybatis.boardProject.user.controller;
 
 import com.mybatis.boardProject.common.exception.CustomException;
 import com.mybatis.boardProject.common.dto.CommonResponse;

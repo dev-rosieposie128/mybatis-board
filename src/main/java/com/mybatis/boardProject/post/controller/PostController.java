@@ -1,4 +1,4 @@
-package com.mybatis.boardProject.post;
+package com.mybatis.boardProject.post.controller;
 
 import com.mybatis.boardProject.post.dto.PostRequest;
 import com.mybatis.boardProject.post.service.PostService;
